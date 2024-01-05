@@ -1,0 +1,82 @@
+\documentclass[a4paper]{article}
+\input{Preamble_commands}
+\begin{document}
+
+%%%%%%%%%%%%%%%%
+% TITLE & NAME %
+%%%%%%%%%%%%%%%%
+\selectlanguage{english}
+\title{This is the Title of the Thesis and it can be a very Big Title covering More than One Line} % <-- ACTION: WRITE your project title here
+\author{Vicente Aser Marques Rebelo Castillo Lorenzo}
+\istid{92569}
+\email{vicente.aser.lorenzo@tecnico.ulisboa.pt}
+\advisor{Rui Fuentecilla Maia Ferreira Neves}
+% \coadvisor{Jane Doe} % <-- ACTION: UNCOMMENT in case you have a co-advisor 
+
+% To make the title
+\maketitle
+\thispagestyle{empty}
+
+%%%%%%%%%%%%
+% ABSTRACT %
+%%%%%%%%%%%%
+\setlength{\abstitleskip}{-\absparindent}
+\input{Sections/Section0-Abstract}
+
+%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS %
+%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+%%%%%%%%%%%%%%%%
+% INTRODUCTION %
+%%%%%%%%%%%%%%%%
+\input{Sections/Section1-Introduction}
+
+%%%%%%%%%%%%%%
+% Background %
+%%%%%%%%%%%%%%
+\input{Sections/Section2-Background}
+
+%%%%%%%%%%%%%%%%
+% Related work %
+%%%%%%%%%%%%%%%%
+\input{Sections/Section3-RelatedWork}
+
+%%%%%%%%%%%%
+% Solution %
+%%%%%%%%%%%%
+\input{Sections/Section4-Solution}
+
+%%%%%%%%%%%%%%
+% Evaluation %
+%%%%%%%%%%%%%%
+\input{Sections/Section5-Evaluation}
+
+%%%%%%%%%%%%%%%%%
+% Work Schedule %
+%%%%%%%%%%%%%%%%%
+\input{Sections/Section6-WorkSchedule}
+
+%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY %
+%%%%%%%%%%%%%%%%
+\clearpage
+\addcontentsline{toc}{section}{\refname}
+\normalem
+\bibliography{Bibliography}
+\ULforem
+
+%%%%%%%%%%%%
+% APPENDIX %
+%%%%%%%%%%%%
+\clearpage % <-- ACTION: Comment the following blocks if you dont need appendixes
+\appendix
+\input{Sections/Section7-AppendixA}
+
+%%%%%%%%%%%%%
+%    END    %
+%%%%%%%%%%%%%
+\end{document}
