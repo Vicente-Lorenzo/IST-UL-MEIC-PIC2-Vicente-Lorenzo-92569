@@ -20,14 +20,6 @@ Triple Exponential Moving Average & $\text{TEMA}(N)_t = 3 \times [\text{EMA}(N)_
 Hull Moving Average & $\text{HMA}(N)_t = \text{WMA}\left(2 \times \text{WMA}\left(\frac{N}{2}\right)_t - \text{WMA}(N)_t\right)$ & - \\
 \addlinespace
 Triangular Moving Average & $\text{TRIMA}(N)_t = \frac{1}{N} \sum_{i=1}^{N} \text{SMA}(N)_{t-N+i}$ & - \\
-\addlinespace
-Kaufman Adaptive Moving Average & $\text{KAMA}(N)_t = \text{KAMA}(N)_{t-1} + \text{SC} \times (\text{Price}_t - \text{KAMA}(N)_{t-1})$ & - \\
-\addlinespace
-& $\text{SC} = [ \text{ER} \times (\phi_{\text{short}} - \phi_{\text{long}}) + \phi_{\text{long}} ]^2, \phi_{\text{short}} = \frac{2}{N_{\text{short}} + 1}$, $\phi_{\text{long}} = \frac{2}{N_{\text{long}} + 1}$ & \\
-\addlinespace
-& $\text{ER} = \frac{| \text{Price}_t - \text{Price}_{t-N} |}{\sum_{i=1}^{N} | \text{Price}_{t-i+1} - \text{Price}_{t-i} |}$ & \\
-\addlinespace
-& where typically $N_{\text{short}} = 2$ and $N_{\text{long}} = 30$ & \\
 \bottomrule
 \end{tabularx}
 \end{table}
