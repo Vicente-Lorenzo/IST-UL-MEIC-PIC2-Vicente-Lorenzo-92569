@@ -1,6 +1,6 @@
 \begin{algorithm}[htb!]
 \caption{Deep Deterministic Policy Gradient}
-\label{Code:DeepDeterministicPolicyGradient}
+\label{Codes:DeepDeterministicPolicyGradient}
 \begin{algorithmic}
 \REQUIRE an actor $\pi(s; \theta)$, a critic network $Q(s, a; \phi)$, learning rates $\beta$ and $\hat{\beta}$, initial parameters $\theta^{(0)}$ and $\phi^{(0)}$
 \STATE Initialize target network parameters $\hat{\phi} \leftarrow \phi^{(0)}$ and $\hat{\theta} \leftarrow \theta^{(0)}$, replay buffer $\mathcal{B}$

@@ -1,0 +1,17 @@
+\begin{landscape}
+\begin{table}[htb!]
+\caption{Overview of different approaches in related work}
+\label{Tables:RelatedWork}
+\centering
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}clllXllX@{}}
+\toprule
+\textbf{Reference} & \textbf{Market} & \textbf{Algorithms} & \textbf{Dataset} & \textbf{State Space} & \textbf{Action Space} & \textbf{Reward} & \textbf{Key Findings} \\ 
+\midrule
+\cite{carapuco_2018} & EURUSD & DQN & Raw Ticks (7 Years) & Ask Price/Volume, Bid Price/Volume, Bid Volume Technical Indicators & Buy, Sell, Neutral & Price Change & Good results \\
+\addlinespace
+\cite{chen_2019} & S\&P500 & DQN, DRQN & Daily OHLCV (19 Years) & Close Price & Buy, Sell, Neutral & Price Change & Both outperform the baseline and DRQN has better results than DQN \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\end{landscape}

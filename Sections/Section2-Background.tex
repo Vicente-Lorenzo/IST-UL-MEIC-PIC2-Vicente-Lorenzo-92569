@@ -1,10 +1,15 @@
 \section{Background}
 
+\textbf{TODO:}
+\begin{enumerate}
+\item Refer Sutton and Barto - Reinforcement Learning: An Introduction on Reinforcement Learning
+\item 
+\end{enumerate}
+
 In this section we discuss the subjects that are crucial to understanding the complexities and scope of our research. We begin by exploring the core principles of Financial Markets with an emphasis on the Forex Market. Next we conduct an analysis of Neural Networks and Reinforcement Learning highlighting how these approaches converge to develop solutions for Forex trading. Lastly we explore the intersection of these two branches of machine learning through an exploration of Deep Reinforcement Learning.
 
 \subsection{Financial Markets and Trading}
-
-Financial markets play an important role in the global economy by facilitating the flow of capital, ensuring liquidity and managing risks. They provide a platform for entities to trade assets, hedge financial risks and fund their operations. These markets serve different purposes, Table~\ref{Table:FinancialMarkets} displays an overview of the main financial markets and their respective economic role.
+Financial markets play an important role in the global economy by facilitating the flow of capital, ensuring liquidity and managing risks. They provide a platform for entities to trade assets, hedge financial risks and fund their operations. These markets serve different purposes, Table~\ref{Tables:FinancialMarkets} displays an overview of the main financial markets and their respective economic role.
 
 \input{Tables/FinancialMarkets}
 
@@ -51,10 +56,10 @@ Now we move from representing data in Forex trading to examining it for making i
 The focus of this research will be on technical analysis, favored for its quantitative results that can be leveraged by complex machine learning models. There are four main types of technical indicators:
 
 \begin{itemize}
-\item \textbf{Trend Indicators}: Used to identify the prevailing direction of market by filtering out market noise. Refer to Table~\ref{Table:TrendIndicators} for more details.
-\item \textbf{Momentum Indicators}: Used to capture the momentum of a given trend, whether it is strong or weak and if a reversal is expected. Refer to Table~\ref{Table:MomentumIndicators} for more details.
-\item \textbf{Volume Indicators}: Used to provide a perspective on the trading volume, offering clues about the strength of a price movement. Refer to Table~\ref{Table:VolumeIndicators} for more details.
-\item \textbf{Volatility Indicators}: Used to identify the level of uncertainty or risk in the market associated with the volatility of the price movement. Refer to Table~\ref{Table:VolatilityIndicators} for more details.
+\item \textbf{Trend Indicators}: Used to identify the prevailing direction of market by filtering out market noise. Refer to Table~\ref{Tables:TrendIndicators} for more details.
+\item \textbf{Momentum Indicators}: Used to capture the momentum of a given trend, whether it is strong or weak and if a reversal is expected. Refer to Table~\ref{Tables:MomentumIndicators} for more details.
+\item \textbf{Volume Indicators}: Used to provide a perspective on the trading volume, offering clues about the strength of a price movement. Refer to Table~\ref{Tables:VolumeIndicators} for more details.
+\item \textbf{Volatility Indicators}: Used to identify the level of uncertainty or risk in the market associated with the volatility of the price movement. Refer to Table~\ref{Tables:VolatilityIndicators} for more details.
 \end{itemize}
 
 \input{Tables/TrendIndicators}
@@ -65,7 +70,6 @@ The focus of this research will be on technical analysis, favored for its quanti
 Technical indicators provide traders with tools for conducting market analysis and making informed decisions. They have been playing an important role in manual trading over the years and more recently have been serving as fundamental components in sophisticated machine learning models that enhance market analysis.
 
 \subsubsection{Algorithmic and Quantitative Trading}
-
 The financial markets have evolved significantly, increasingly influenced by technology, leading to the predominance of machines and algorithms in trading strategies. 
 
 Algorithmic Trading uses computer programs to execute trades far quicker and in greater volumes than human traders. It efficiently analyzes data, interprets market conditions, and executes trades based on set criteria. Used in pre-trade analysis, signal generation, and trade execution, it's integral for large institutions and hedge funds to implement complex strategies rapidly and on a large scale.
@@ -75,7 +79,6 @@ Quantitative Trading, driven by quants (quantitative analysts), advances this wi
 Both algorithmic and quantitative trading have transformed financial markets, enhancing efficiency and introducing new dynamics like high-frequency trading (HFT). This blend of finance and technology has reshaped trading, highlighting the importance of advanced machine learning models like neural networks for analyzing complex market data and reinforcement learning for developing intelligent trading strategies.
 
 \subsection{Neural Networks}
-
 In todays world, where we have an abundance of data and easy access to it, the power of machine learning has become a game changer in  many fields. At its core, machine learning relies on algorithms to identify patterns in data and to make decisions with minimal human intervention. Tom Mitchell, a leading figure in the field from Carnegie Mellon University, explains it as:
 \begin{quote}
 "A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E."
@@ -107,24 +110,24 @@ Here, the weight matrix \( W^{(l)} \in \mathbb{R}^{K_l \times K_{l-1}} \) and th
 h^{(l)}(x) = g(z^{(l)}(x))
 \end{equation}
 
-During the design of a neural network, the choice for the activation functions is very important. The choice of activation function for the hidden layers may employ a variety of non-linear activation functions, adding layers of expressiveness to the network that allow it to learn more complex patterns. On the other hand, the activation function utilized in the output layer is determined by the type of task the network is going to perform. It is this careful selection that directly influences the network's proficiency in accurately and effectively modeling the data. Refer to Table~\ref{Table:ActivationFunctions} for a summarized overview of the main activation functions.
+During the design of a neural network, the choice for the activation functions is very important. The choice of activation function for the hidden layers may employ a variety of non-linear activation functions, adding layers of expressiveness to the network that allow it to learn more complex patterns. On the other hand, the activation function utilized in the output layer is determined by the type of task the network is going to perform. It is this careful selection that directly influences the network's proficiency in accurately and effectively modeling the data. Refer to Table~\ref{Tables:ActivationFunctions} for a summarized overview of the main activation functions.
 
 \input{Tables/ActivationFunctions}
 
 \subsubsection{Learning and Optimization using Backpropagation}
-Neural networks learn by iteratively adjusting weights and biases to minimize the error between predicted outputs and actual target values. This learning process is guided by a loss function that quantifies the model's error. The goal is to optimize the network by finding parameters that minimize this loss function. Different problems require different loss functions, such as mean squared error for regression tasks and cross-entropy for classification. Refer to Table~\ref{Table:LossFunctions} for a detailed overview of their formulas.
+Neural networks learn by iteratively adjusting weights and biases to minimize the error between predicted outputs and actual target values. This learning process is guided by a loss function that quantifies the model's error. The goal is to optimize the network by finding parameters that minimize this loss function. Different problems require different loss functions, such as mean squared error for regression tasks and cross-entropy for classification. Refer to Table~\ref{Tables:LossFunctions} for a detailed overview of their formulas.
 
 \input{Tables/LossFunctions}
 
-The core algorithm used to train neural networks is known as backpropagation. It involves calculating the gradients of the loss function relative to the network's weights and biases, which mathematically indicates the steepest increase in the loss function. Refer to Algorithm~\ref{Code:GradientLossFunction} for a detailed overview of how to calculate these gradients.
+The core algorithm used to train neural networks is known as backpropagation. It involves calculating the gradients of the loss function relative to the network's weights and biases, which mathematically indicates the steepest increase in the loss function. Refer to Algorithm~\ref{Codes:GradientLossFunction} for a detailed overview of how to calculate these gradients.
 
 \input{Codes/GradientLossFunction}
 
-Then, gradient descent algorithm is used to iteratively update the weights and biases in the opposite direction of the gradients, thus reducing the loss and hopefully increasing the network's accuracy. Its variants, outlined with respective formulas in Table~\ref{Table:GradientDescent}, address different data and computational needs. Batch gradient descent uses the entire dataset for updates, ensuring thoroughness but potentially struggling with large datasets. Stochastic gradient descent updates parameters per data point, offering speed at the cost of stability. Mini-batch gradient descent strikes a balance, using data subsets for more stable and computationally efficient updates.
+Then, gradient descent algorithm is used to iteratively update the weights and biases in the opposite direction of the gradients, thus reducing the loss and hopefully increasing the network's accuracy. Its variants, outlined with respective formulas in Table~\ref{Tables:GradientDescent}, address different data and computational needs. Batch gradient descent uses the entire dataset for updates, ensuring thoroughness but potentially struggling with large datasets. Stochastic gradient descent updates parameters per data point, offering speed at the cost of stability. Mini-batch gradient descent strikes a balance, using data subsets for more stable and computationally efficient updates.
 
 \input{Tables/GradientDescent}
 
-In Table~\ref{Table:GradientDescent}, the learning rate \( \eta \) is an hyperparameter that influences the convergence of gradient descent. An optimal learning rate balances convergence speed and precision, preventing overshooting or slow progress that could get trapped in local minima. Adaptive learning rate techniques, adjusting \( \eta \) during training, enhance learning efficacy, emphasizing the balance between convergence speed and accuracy in neural network training. Some other techniques to enhance convergence and its speed involve normalization and standardization of the input data.
+In Table~\ref{Tables:GradientDescent}, the learning rate \( \eta \) is an hyperparameter that influences the convergence of gradient descent. An optimal learning rate balances convergence speed and precision, preventing overshooting or slow progress that could get trapped in local minima. Adaptive learning rate techniques, adjusting \( \eta \) during training, enhance learning efficacy, emphasizing the balance between convergence speed and accuracy in neural network training. Some other techniques to enhance convergence and its speed involve normalization and standardization of the input data.
 
 \subsubsection{Bias-Variance Trade-off and Model Generalization}
 The generalization power of a neural network, depends on finding balance between bias and variance. Bias leads to underfitting, where the model overlooks underlying trends due to overly simplistic assumptions, while variance leads to overfitting, where the model interprets noise as signal due to excessive complexity.
@@ -236,14 +239,13 @@ Within the realm of model-free RL, there are on-policy strategies, which learn a
 
 Another important distinction lies between value-based and policy-based learning approaches. On the one hand, value-based methods, like Temporal Difference Learning (TD), Q-Learning and SARSA Learning, focus on estimating the value of states or state-action pairs. These algorithms derive policies implicitly from these values. SARSA Learning uses an on-policy strategy while Q-Learning and TD Learning use an off-policy strategy. On the other hand, policy-based methods, such as the REINFORCE Learning directly optimize the policy itself. These techniques are particularly useful when dealing with dimensional or continuous action spaces. 
 
-In particular, Actor-Critic Learning combines elements of both policy-based and value-based approaches. It has a policy function (the actor) and a value function (the critic) which provides the stability and efficiency of value based-methods along with direct policy improvement. This collaboration between the actor and the critic result in improved policy updates, especially beneficial for complex environments. This algorithm is of particular relevance because it acts as a connection between reinforcement learning and neural networks, as we will see in the next section. Refer to Algorithm~\ref{Code:ActorCritic} for a detailed implementation.
+In particular, Actor-Critic Learning combines elements of both policy-based and value-based approaches. It has a policy function (the actor) and a value function (the critic) which provides the stability and efficiency of value based-methods along with direct policy improvement. This collaboration between the actor and the critic result in improved policy updates, especially beneficial for complex environments. This algorithm is of particular relevance because it acts as a connection between reinforcement learning and neural networks, as we will see in the next section. Refer to Algorithm~\ref{Codes:ActorCritic} for a detailed implementation.
 
 \input{Codes/ActorCritic}
 
 While the Puterman theorem guarantees a deterministic stationary optimal policy for Markov Decision Processes (MDPs), such assurances do not extend to complex, non-stationary environments like financial markets. Forex markets, in particular, are influenced by historical data in ways that standard state representations in MDPs do not account for. Consequently, RL in these markets relies on approximated models, utilizing technical indicators and feature engineering to integrate essential historical information into the state representation in order to try to approximate the Markov property.
 
 \subsection{Deep Reinforcement Learning}
-
 Deep Reinforcement Learning (DRL) merges reinforcement learning's decision-making with the pattern recognition capabilities of neural networks, making it especially powerful for handling complex, high-dimensional data in environments like the forex market. DRL empowers trading algorithms with adaptability, positioning them to potentially revolutionize trading strategies.
 
 \subsubsection{Fundamentals and History}
@@ -269,6 +271,6 @@ Among these approaches, the Deep Deterministic Policy Gradient (DDPG) algorithm 
 
 \input{Codes/DeepDeterministicPolicyGradient}
 
-In Algorithm~\ref{Code:DeepDeterministicPolicyGradient} it can observed how DDPG utilizes neural networks to approximate both the actor and critic functions. This enables handling complex input dimensions commonly encountered in forex markets. The utilization of a replay buffer for experience storage and the strategic sampling of mini-batches are key features that enhance learning stability by mitigating the correlation between sequential data points. Furthermore, DDPG incorporates target networks, which are gradually updated versions of the actor and critic, to solidify the learning targets and encourages gradual improvement.
+In Algorithm~\ref{Codes:DeepDeterministicPolicyGradient} it can observed how DDPG utilizes neural networks to approximate both the actor and critic functions. This enables handling complex input dimensions commonly encountered in forex markets. The utilization of a replay buffer for experience storage and the strategic sampling of mini-batches are key features that enhance learning stability by mitigating the correlation between sequential data points. Furthermore, DDPG incorporates target networks, which are gradually updated versions of the actor and critic, to solidify the learning targets and encourages gradual improvement.
 
 While we can not guarantee convergence of DDPG due to the partially observable nature of forex markets, its design for continuous policy adaptation presents a compelling approach to developing sophisticated trading strategies. The adaptability of DDPG to the evolving conditions of financial markets highlights its potential as a breakthrough in algorithmic trading.
