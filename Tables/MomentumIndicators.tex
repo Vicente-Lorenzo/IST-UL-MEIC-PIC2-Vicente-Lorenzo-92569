@@ -1,5 +1,5 @@
 \begin{table}[htb!]
-\caption{Summary of Momentum Technical Indicators}
+\caption{Summary of frequently used Momentum Technical Indicators \cite{jansen_machine_2020}.}
 \label{Tables:MomentumIndicators}
 \centering
 \footnotesize
@@ -8,6 +8,8 @@
 \textbf{Indicator Name} & \textbf{Formula} & \textbf{Range} \\ 
 \midrule
 Price Momentum & $\text{PM}_t = \frac{\text{Price}_t - \text{Price}_{t-1}}{\text{Price}_{t-1}}$ & - \\
+\addlinespace
+Price Acceleration & $\text{PA}_t = \frac{\text{Short Linear Regression Coefficient}}{\text{Long Linear Regression Coefficient}} = \frac{\beta_\text{short}}{\beta_\text{long}}$ & - \\
 \addlinespace
 Relative Strength Index & $\text{RSI}(N)_t = 100 - \frac{100}{1 + \frac{\text{Average Gain}_t}{\text{Average Loss}_t}}$ & [0, 100] \\
 \addlinespace
